@@ -1,6 +1,10 @@
+## Data View
+
+From the root of the repository, run `python utils.py` . Assumes python 3 and it may be necessary to install dependencies. Also note that the data must remain zipped in the repository, but running the above command will unzip files. Will add function to remove unzipped files (WIP).
+
 # 3D-Printing-Data
 
-This repository contains data gathered from 3D printing machine MonkeyFab Spire. Each directory contains data samples gathered from different prints, some of them being fault. 
+This _forked_ repository contains data gathered from 3D printing machine MonkeyFab Spire. Each directory contains data samples gathered from different prints, some of them being fault. 
 
 ## Data usage 
 
@@ -95,13 +99,13 @@ The files contain data from the following faulty situations:
 The directory structure is as follows:
 
  * _\four_towers_ - data related to printing towers model
- 
+
 <img src="docs/towers_v01.png" alt="four_towers" height="250"/> 
- 
+
  * _\four_tower_no_base_ - data related to printing towers model, but without the base
- 
+
 <img src="docs/towers_only_v01.png" alt="four_towers_no_base" height="250"/>
- 
+
 Each directory contains **.stl** file with the print source.
 Data files are organised in the following subdirectories:
 
