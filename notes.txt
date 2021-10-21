@@ -1,0 +1,15 @@
+questions:
+
+can we transform Gcode for arbitrary design into similar sensor data?
+how to consider these as sequences?
+How to artificially add flaws to a print?
+
+limitations/challenges:
+
+There are only a few examples of failures for a single design file
+The sequences are of different lengths for different printing errors
+
+
+
+
+

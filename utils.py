@@ -17,12 +17,15 @@ class PrintData:
 
     def unzip(self):
         p = os.path.join(os.getcwd(), "four_towers", self.name)
+        print(p)
         with zipfile.ZipFile(os.path.join(p,self.name+".zip"), 'r') as zf:
-            zf.extractall(p)
+            zf.extractall(os.path.join(p))
 
     def readData(self):
         fp = os.path.join(os.getcwd(), "four_towers", self.name, self.name)
         files = [x for x in os.listdir(fp) if x[-3:] == "txt"]
+        print(f"path {fp}")
+        print(files)
         fname = os.path.join(fp, files[0])
         df = pd.read_csv(fname, low_memory=False, names=['data_id', 'accel0X',
                                      'accel0Y', 'accel0Z',
@@ -76,14 +79,27 @@ class PrintData:
         fig['layout']['yaxis']['title']='acceleration (mm/s^2)'
         fig['layout']['yaxis3']['title']='tension (mN ?)'
 
+        fig.update_layout(title_text=f"{self.name} printing data")
         return fig
 
 
+""" Remove the """
+def cleanUp():
+    base = os.path.join(os.getcwd(), "four_towers")
+    fls = os.listdir(base)
+    for f in fls:
+        d = os.path.join(base, f)
+        if os.path.isdir(d):
+            print(os.listdir(d))
+
 # data = {}
-# for name in NAMES[:1]:
+# for name in NAMES[-1:]:
 #     data[name] = PrintData(name)
-# data[NAMES[0]].fig.show()
+
+
+# remove unzipped files to prevent github yelling
+cleanUp()
 
 # test
-pr = PrintData("proper")
-pr.fig.show()
+# pr = PrintData("proper")
+# pr.fig.show()
